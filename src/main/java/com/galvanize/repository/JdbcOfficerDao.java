@@ -73,4 +73,8 @@ public class JdbcOfficerDao {
 
         return officer;
     }
+
+    public void delete(long id) {
+        jdbcTemplate.update("delete from officers where id= ?", id);
+    }
 }

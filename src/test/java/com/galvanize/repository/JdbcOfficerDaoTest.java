@@ -52,4 +52,14 @@ class JdbcOfficerDaoTest {
         System.out.println(officer);
     }
 
+    @Test
+    void deleteOfficer() {
+        Officer officer = new Officer(Rank.ADMIRAL, "New", "Guy");
+        officer = jdbcOfficerDao.save(officer);
+        long id = officer.getId();
+        assertNotNull(id);
+
+        jdbcOfficerDao.delete(id);
+        assertFalse(jdbcOfficerDao.exists(id));
+    }
 }

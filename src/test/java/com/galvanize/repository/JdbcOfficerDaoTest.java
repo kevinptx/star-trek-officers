@@ -43,4 +43,13 @@ class JdbcOfficerDaoTest {
         assertTrue(officer.isPresent());
         System.out.println(officer);
     }
+
+    @Test
+    void createNewOfficer() {
+        Officer officer = new Officer(Rank.CAPTAIN,"This", "Guy");
+        jdbcOfficerDao.save(officer);
+        assertNotNull(officer.getId());
+        System.out.println(officer);
+    }
+
 }

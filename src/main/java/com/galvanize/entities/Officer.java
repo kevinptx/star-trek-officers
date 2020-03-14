@@ -1,13 +1,7 @@
 package com.galvanize.entities;
-import javax.persistence.*;
 
 
 public class Officer {
-//    Create an entity named Officer with the following attributes
-//    id : Long
-//    rank : Rank (enum from above)
-//    first : String
-//    last : String
 
     private Long id;
     private Rank rank;
@@ -15,6 +9,13 @@ public class Officer {
     private String lastName;
 
     public Officer(){}
+
+    public Officer(Long id, Rank rank, String firstName, String lastName) {
+        this.id = id;
+        this.rank = rank;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
 
     public Officer(Rank rank, String firstName, String lastName){
         this.id = id;

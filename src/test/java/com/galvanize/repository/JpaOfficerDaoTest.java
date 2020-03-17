@@ -21,10 +21,8 @@ class JpaOfficerDaoTest {
     @Test
     void countOfficers() {
         Long count = jpaOfficerDao.count();
-
         assertTrue(count > 0);
     }
-
     @Test
     void findAllOfficers(){
         List<Officer> officers = jpaOfficerDao.findAll();
@@ -50,6 +48,7 @@ class JpaOfficerDaoTest {
         jpaOfficerDao.save(officer);
         assertNotNull(officer.getId());
         System.out.println(officer);
+        jpaOfficerDao.delete(officer);
     }
 
     @Test
